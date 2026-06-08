@@ -1,0 +1,11 @@
+﻿<button>@MyParameter</button>
+
+@code {
+    [Parameter]
+    public string MyParameter { get; set; } = "Default Value";
+
+    #if !RADZEN
+    [Inject]
+    #endif
+    public MyService MyService { get; set; } = default!;
+}
