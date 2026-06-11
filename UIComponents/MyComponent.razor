@@ -1,4 +1,6 @@
-﻿<button>@MyParameter</button>
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JS
+<button>@MyParameter</button>
 
 @code {
     [Parameter]
@@ -8,4 +10,13 @@
     [Inject]
     #endif
     public MyService MyService { get; set; } = default!;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Call the global function defined in MyScripts.js
+            await JS.InvokeVoidAsync("globalFunction");
+        }
+    }
 }
