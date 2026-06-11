@@ -7,7 +7,7 @@
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="UIComponents" Version="1.0.1" />
+    <PackageReference Include="UIComponents" Version="1.0.8" />
   </ItemGroup>
 
 </Project>
